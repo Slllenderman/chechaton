@@ -1,0 +1,133 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:temp="clr-namespace:chechaton.templates"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+                    
+    <CornerRadius x:Key="CornerRadius">15</CornerRadius>
+    <CornerRadius x:Key="FiledCornerRaidus">0, 15, 0, 10</CornerRadius>
+    <sys:Double x:Key="FailedRectSize">30</sys:Double>
+    <sys:String x:Key="HavePlansTitle">Where's plans</sys:String>
+    <sys:String x:Key="NoPlansTitle">No plans today</sys:String>
+
+    <ControlTemplate TargetType="Button" x:Key="calendarBt">
+        <ControlTemplate.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="../assets/brushes.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </ControlTemplate.Resources>
+        <Border x:Name="BackRect" CornerRadius="{StaticResource CornerRadius}" 
+                Background="{TemplateBinding Background}" BorderThickness="0" Height="115" Width="215">
+            <ContentControl FontFamily="Inter">
+                <ContentControl.Content>
+                    <Grid>
+                        <TextBlock x:Name="TodayTb" 
+                                   VerticalAlignment="Top" HorizontalAlignment="Left" Margin="10, 5, 0, 0"
+                                   Text="Today" FontWeight="Bold" Visibility="Collapsed" FontSize="24"/>
+                        <Border x:Name="FailedRect" 
+                                Width="{StaticResource FailedRectSize}" Height="{StaticResource FailedRectSize}" 
+                                VerticalAlignment="Top" HorizontalAlignment="Right"
+                                Background="{StaticResource FailedOrange}" Visibility="Collapsed"
+                                CornerRadius="{StaticResource FiledCornerRaidus}"/>
+                        <TextBlock x:Name="MainTitle"
+                                   VerticalAlignment="Center" HorizontalAlignment="Center"
+                                   Text="{TemplateBinding Content}" FontSize="24"/>
+                    </Grid>
+                </ContentControl.Content>
+            </ContentControl>
+        </Border>
+        <ControlTemplate.Triggers>
+            <Trigger Property="temp:ButtonProperties.IsToday" Value="True">
+                <Setter TargetName="MainTitle" Property="FontSize" Value="20"/>
+                <Setter TargetName="MainTitle" Property="FontStyle" Value="Italic"/>
+                <Setter TargetName="MainTitle" Property="FontWeight" Value="SemiBold"/>
+                <Setter TargetName="MainTitle" Property="Padding" Value="0, 10, 0, 0"/>
+                <Setter TargetName="MainTitle" Property="Text" Value="{StaticResource NoPlansTitle}"/>
+                <Setter TargetName="TodayTb" Property="Visibility" Value="Visible"/>
+            </Trigger>
+            <Trigger Property="temp:ButtonProperties.IsFailed" Value="True">
+                <Setter TargetName="FailedRect" Property="Visibility" Value="Visible"/>
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="temp:ButtonProperties.IsHaveTask" Value="True"/>
+                    <Condition Property="temp:ButtonProperties.IsToday" Value="True"/>
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter TargetName="MainTitle" Property="Text" Value="{StaticResource HavePlansTitle}"/>
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="MainTitle" Storyboard.TargetProperty="FontSize"
+                                             By="2" FillBehavior="HoldEnd" Duration="0:0:0.3">
+                                <DoubleAnimation.EasingFunction>
+                                    <SineEase EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                            <ColorAnimation Storyboard.TargetName="BackRect" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                        FillBehavior="HoldEnd" Duration="0:0:0.3" >
+                                <ColorAnimation.By>
+                                    <Color ScR="-0.12" ScG="-0.02" ScB="-0.58"/>
+                                </ColorAnimation.By>
+                                <ColorAnimation.EasingFunction>
+                                    <SineEase EasingMode="EaseInOut"/>
+                                </ColorAnimation.EasingFunction>
+                            </ColorAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="MainTitle" Storyboard.TargetProperty="FontSize"
+                                         FillBehavior="HoldEnd" Duration="0:0:0.3">
+                                <DoubleAnimation.EasingFunction>
+                                    <SineEase EasingMode="EaseOut"/>
+                                </DoubleAnimation.EasingFunction>
+                            </DoubleAnimation>
+                            <ColorAnimation Storyboard.TargetName="BackRect" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                         FillBehavior="HoldEnd" Duration="0:0:0.3" >
+                                <ColorAnimation.EasingFunction>
+                                    <SineEase EasingMode="EaseInOut"/>
+                                </ColorAnimation.EasingFunction>
+                            </ColorAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="BackRect" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                        FillBehavior="HoldEnd" Duration="0:0:0.1" >
+                                <ColorAnimation.By>
+                                    <Color ScR="-0.3" ScG="-0.3" ScB="-0.3"/>
+                                </ColorAnimation.By>
+                                <ColorAnimation.EasingFunction>
+                                    <SineEase EasingMode="EaseInOut"/>
+                                </ColorAnimation.EasingFunction>
+                            </ColorAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="BackRect" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                                        FillBehavior="HoldEnd" Duration="0:0:0.1" >
+                                <ColorAnimation.EasingFunction>
+                                    <SineEase EasingMode="EaseInOut"/>
+                                </ColorAnimation.EasingFunction>
+                            </ColorAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+</ResourceDictionary>

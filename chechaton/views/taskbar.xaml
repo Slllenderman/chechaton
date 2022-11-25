@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="chechaton.views.taskbar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:temp="clr-namespace:chechaton.templates"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1620">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../assets/brushes.xaml"/>
+                <ResourceDictionary Source="../templates/buttons.xaml"/>
+                <ResourceDictionary Source="../assets/imgs.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Height="300" Width="1620">
+        <Border Margin="10, 30, 15, 20" 
+                CornerRadius="20" 
+                Background="{StaticResource TaskBarGreen}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Border Grid.Column="0"
+                    Margin="0, 10, 0, 10"
+                    BorderThickness="0, 0, 1, 0"
+                    BorderBrush="Black"/>
+                <StackPanel Grid.Column="0">
+                    <Grid Margin="10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="45"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <UserControl Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
+                                     VerticalAlignment="Top"
+                                     Template="{StaticResource UserLogo}"/>
+                        <TextBlock Grid.Column="1"
+                                   Text="Andrey Kharitonov"
+                                   VerticalAlignment="Bottom"
+                                   FontFamily="Inter"
+                                   FontSize="32"
+                                   FontWeight="Bold"
+                                   Height="32"/>
+                        <TextBlock Grid.Column="1" Grid.Row="1"
+                                   VerticalAlignment="Top"
+                                   Text="11 Noveber 09am"
+                                   FontFamily="Inter"
+                                   FontSize="20"
+                                   FontWeight="Bold"/>
+                    </Grid>
+                    <TextBlock Text="No plans for you today, dude"
+                               FontFamily="Inter"
+                               FontSize="20"
+                               FontWeight="Bold"
+                               FontStyle="Italic"
+                               HorizontalAlignment="Center"
+                               Margin="0, 45, 0, 0"/>
+                </StackPanel>
+                <TextBlock Grid.Column="1"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontFamily="Inter"
+                       FontSize="38"
+                       FontWeight="ExtraBold"
+                       TextAlignment="Center">
+                No plans to work hard yet<LineBreak/>
+                Select the date to plan something greate
+                </TextBlock>
+                <StackPanel Grid.Column="2" Margin="10, 0, 10, 0">
+                    <Button Template="{StaticResource appBtns}"
+                        Height="50" Margin="0, 10, 0, 0"
+                        Background="{StaticResource HolidayYellow}"
+                        FontSize="20"
+                        VerticalAlignment="Top">
+                        Next task
+                    </Button>
+                    <Button Template="{StaticResource appBtns}"
+                        Height="50" Margin="0, 10, 0, 0"
+                        Background="{StaticResource HolidayYellow}"
+                        FontSize="20"
+                        VerticalAlignment="Top">
+                        Previous task
+                    </Button>
+                    <Button Template="{StaticResource appBtns}"
+                        Height="50" Margin="0, 10, 0, 0"
+                        Background="{StaticResource HolidayYellow}"
+                        FontSize="20"
+                        VerticalAlignment="Top">
+                        Next month
+                    </Button>
+                    <Button Template="{StaticResource appBtns}"
+                        Height="50" Margin="0, 10, 0, 0"
+                        Background="{StaticResource HolidayYellow}"
+                        FontSize="20"
+                        VerticalAlignment="Top">
+                        Prevoius month
+                    </Button>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>
