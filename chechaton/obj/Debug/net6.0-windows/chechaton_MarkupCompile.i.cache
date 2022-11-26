@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\ander\source\repos\chechaton\chechaton\App.xaml
-81750406061
+12-287553750
 
-10-1127679837
+12-296132946
 194-1103864946
-assets\brushes.xaml;assets\imgs.xaml;MainWindow.xaml;templates\buttons.xaml;templates\calendarBt.xaml;templates\checkboxes.xaml;views\calendar.xaml;views\taskbar.xaml;
+assets\brushes.xaml;assets\imgs.xaml;assets\rightarrow1_121323.xaml;MainWindow.xaml;templates\buttons.xaml;templates\calendarBt.xaml;templates\changeTaskButton.xaml;templates\checkboxes.xaml;views\calendar.xaml;views\taskbar.xaml;views\taskslist.xaml;views\ticketBack.xaml;
 
-True
+False
 

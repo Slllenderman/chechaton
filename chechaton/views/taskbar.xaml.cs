@@ -24,6 +24,6 @@ namespace chechaton.views
         {
             InitializeComponent();
         }
-        
+
     }
 }

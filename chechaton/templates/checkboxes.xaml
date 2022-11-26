@@ -3,26 +3,72 @@
                     xmlns:temp="clr-namespace:chechaton.templates">
     <ControlTemplate x:Key="appChkBxs" TargetType="{x:Type CheckBox}">
         <ControlTemplate.Resources>
-            <temp:checkBoxConverters x:Key="SizeConverter"/>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary>
+                        <temp:checkBoxConverter x:Key="SizeConverter"/>
+                        <temp:checkMarkHeightConverter x:Key="HeightConverter"/>
+                        <temp:checkMarkWidthConverter x:Key="WidthConverter"/>
+                        <temp:borderThickConverter x:Key="BorderSizeConverter"/>
+                        <temp:borderThickConverter x:Key="CornerRadiusConverter"/>
+                    </ResourceDictionary>
+                    <ResourceDictionary Source="../assets/imgs.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
         </ControlTemplate.Resources>
-        <BulletDecorator Background="Transparent" >
-            <BulletDecorator.Bullet>
-                <Button Background="Transparent" BorderThickness="0" Command="{TemplateBinding Command}">
-                    <Border x:Name="Border"
-                    Width="{Binding FontSize, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource SizeConverter}}"
-                    Height="{Binding FontSize, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource SizeConverter}}"
-                    CornerRadius="5"
-                    BorderThickness="2.5"
-                    BorderBrush="{TemplateBinding Foreground}">
-                    </Border>
-                </Button>
-            </BulletDecorator.Bullet>
-            <TextBlock x:Name="Content" Margin="4,0,0,0"
-                            FontSize="{TemplateBinding FontSize}"
-                            FontWeight="{TemplateBinding FontWeight}"
-                            Text="{TemplateBinding Content}"/>
-        </BulletDecorator>
+        <StackPanel Orientation="Horizontal">
+            <Grid>
+                <Border x:Name="Border"
+                                Width="{Binding FontSize, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource SizeConverter}}"
+                                Height="{Binding FontSize, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource SizeConverter}}"
+                                CornerRadius="{Binding FontSize, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource CornerRadiusConverter}}"
+                                BorderThickness="{Binding FontSize, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BorderSizeConverter}}"
+                                BorderBrush="{TemplateBinding Foreground}"
+                                Background="Transparent">
+                </Border>
+                <UserControl x:Name="CheckMark" Template="{StaticResource CheckMarkIMG}"
+                        Opacity="0"            
+                        Width="{Binding FontSize, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource WidthConverter}}"
+                        Height="{Binding FontSize, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource HeightConverter}}"/>
+            </Grid>
+            <Grid Margin="5, 0, 0, 3">
+                <TextBlock x:Name="Content"
+                           VerticalAlignment="Center"
+                           FontSize="{TemplateBinding FontSize}"
+                           FontWeight="{TemplateBinding FontWeight}"
+                           Text="{TemplateBinding Content}"/>
+                <TextBlock x:Name="StrikedContent" 
+                           Opacity="0"
+                           TextDecorations="Strikethrough"
+                           VerticalAlignment="Center"
+                           FontSize="{TemplateBinding FontSize}"
+                           FontWeight="{TemplateBinding FontWeight}"
+                           Text="{TemplateBinding Content}"/>
+            </Grid>
+        </StackPanel>
         <ControlTemplate.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Trigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.2" To="1" FillBehavior="HoldEnd"
+                                             Storyboard.TargetName="StrikedContent" Storyboard.TargetProperty="Opacity"/>
+                            <DoubleAnimation Duration="0:0:0.2" To="1" FillBehavior="HoldEnd"
+                                             Storyboard.TargetName="CheckMark" Storyboard.TargetProperty="Opacity"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.EnterActions>
+                <Trigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Duration="0:0:0.2" FillBehavior="HoldEnd"
+                                             Storyboard.TargetName="StrikedContent" Storyboard.TargetProperty="Opacity"/>
+                            <DoubleAnimation Duration="0:0:0.2" FillBehavior="HoldEnd"
+                                             Storyboard.TargetName="CheckMark" Storyboard.TargetProperty="Opacity"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </Trigger.ExitActions>
+            </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
                 <Trigger.EnterActions>
                     <BeginStoryboard>
@@ -30,7 +76,7 @@
                             <ThicknessAnimation Storyboard.TargetName="Border"
                                                         Storyboard.TargetProperty="BorderThickness"
                                                         Duration="0:0:0.3"
-                                                        By="1.5"
+                                                        By="1"
                                                         FillBehavior="HoldEnd"/>
                             <DoubleAnimation Storyboard.TargetName="Content"
                                              Storyboard.TargetProperty="FontSize"
@@ -38,6 +84,20 @@
                                              By="1"
                                              FillBehavior="HoldEnd"/>
                             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content"
+                                                           Storyboard.TargetProperty="FontWeight"
+                                                           Duration="0:0:0.3">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <FontWeight>Medium</FontWeight>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                            <DoubleAnimation Storyboard.TargetName="StrikedContent"
+                                             Storyboard.TargetProperty="FontSize"
+                                             Duration="0:0:0.3"
+                                             By="1"
+                                             FillBehavior="HoldEnd"/>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="StrikedContent"
                                                            Storyboard.TargetProperty="FontWeight"
                                                            Duration="0:0:0.3">
                                 <DiscreteObjectKeyFrame KeyTime="0">
@@ -61,6 +121,19 @@
                                              Duration="0:0:0.3"
                                              FillBehavior="HoldEnd"/>
                             <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Content"
+                                                           Storyboard.TargetProperty="FontWeight"
+                                                           Duration="0:0:0.3">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <FontWeight>Normal</FontWeight>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                            <DoubleAnimation Storyboard.TargetName="StrikedContent"
+                                             Storyboard.TargetProperty="FontSize"
+                                             Duration="0:0:0.3"
+                                             FillBehavior="HoldEnd"/>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="StrikedContent"
                                                            Storyboard.TargetProperty="FontWeight"
                                                            Duration="0:0:0.3">
                                 <DiscreteObjectKeyFrame KeyTime="0">

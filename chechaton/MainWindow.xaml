@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:chechaton.views"
         xmlns:vms="clr-namespace:chechaton.viewmodels"
+        xmlns:temp="clr-namespace:chechaton.templates"
         mc:Ignorable="d"
         Title="MainWindow" Width="1920" Height="1080">
     
@@ -12,28 +13,15 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="assets/brushes.xaml"/>
-                <ResourceDictionary Source="templates/checkboxes.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
     <Grid Background="{StaticResource BackRadialGradient}">
-        <!--<StackPanel>
-            <CheckBox x:Name="FCh" VerticalAlignment="Top" 
-                  Template="{StaticResource appChkBxs}" 
-                  FontSize="40"
-                  HorizontalAlignment="Left"
-                  Content="Some text" Width="250"
-                  Foreground="#000000"/>
-            <CheckBox VerticalAlignment="Top" 
-                  Template="{StaticResource appChkBxs}" 
-                  FontSize="40"
-                  HorizontalAlignment="Left"
-                  Content="Some text" Width="250"
-                  Foreground="#000000"/>
-        </StackPanel>-->
         <StackPanel>
             <views:taskbar/>
             <views:calendar/>
         </StackPanel>
+        <Border Width="1920" Height="1080" Background="#000000" Opacity="0.25"/>
+        <views:taskslist HorizontalAlignment="Center" VerticalAlignment="Center"/>
     </Grid>
 </Window>

@@ -29,3 +29,9 @@ C:\Users\ander\source\repos\chechaton\chechaton\obj\Debug\net6.0-windows\chechat
 C:\Users\ander\source\repos\chechaton\chechaton\obj\Debug\net6.0-windows\ref\chechaton.dll
 C:\Users\ander\source\repos\chechaton\chechaton\obj\Debug\net6.0-windows\assets\imgs.baml
 C:\Users\ander\source\repos\chechaton\chechaton\obj\Debug\net6.0-windows\templates\checkboxes.baml
+C:\Users\ander\source\repos\chechaton\chechaton\obj\Debug\net6.0-windows\templates\changeTaskButton.baml
+C:\Users\ander\source\repos\chechaton\chechaton\obj\Debug\net6.0-windows\views\ticketBack.g.cs
+C:\Users\ander\source\repos\chechaton\chechaton\obj\Debug\net6.0-windows\views\ticketBack.baml
+C:\Users\ander\source\repos\chechaton\chechaton\obj\Debug\net6.0-windows\assets\rightarrow1_121323.baml
+C:\Users\ander\source\repos\chechaton\chechaton\obj\Debug\net6.0-windows\views\taskslist.g.cs
+C:\Users\ander\source\repos\chechaton\chechaton\obj\Debug\net6.0-windows\views\taskslist.baml
