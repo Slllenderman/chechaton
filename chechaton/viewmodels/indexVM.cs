@@ -5,41 +5,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-
+using DevExpress.Mvvm;
 namespace chechaton.viewmodels
 {
-
-    public class RelayCommand : ICommand
+    public class Day : ViewModelBase
     {
-        private Action<object> execute;
-        private Func<object, bool> canExecute;
-
-        public event EventHandler CanExecuteChanged
-        {
-            add { CommandManager.RequerySuggested += value; }
-            remove { CommandManager.RequerySuggested -= value; }
-        }
-
-        public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
-        {
-            this.execute = execute;
-            this.canExecute = canExecute;
-        }
-
-        public bool CanExecute(object parameter)
-        {
-            return this.canExecute == null || this.canExecute(parameter);
-        }
-
-        public void Execute(object parameter)
-        {
-            this.execute(parameter);
-        }
-    }
-
-    public class Day
-    {
-        public bool IsFailed, IsToday, IsNoMonth, IsHaveTask, IsHoliday;
+        public bool IsFailed { get; set; }
+        public bool IsToday, IsNoMonth;
+        public bool IsHaveTask { get; set; }
+        public bool IsHoliday { get; set; }
+        public int CalendarX { get; set; } 
+        public int CalendarY { get; set; } 
+        public string StrDate { get; set; }
 
         public Day(bool IsFailed, bool IsToday, bool IsNoMonth, bool IsHaveTask, bool IsHoliday)
         {
@@ -50,13 +27,16 @@ namespace chechaton.viewmodels
             this.IsHoliday = IsHoliday;
         }
 
-        public Day()
+        public Day(int CalendarX, int CalendarY, string StrDate)
         {
             IsToday = false;
             IsNoMonth = false;
             IsHaveTask = false;
             IsFailed = false;
             IsHoliday = false;
+            this.CalendarX = CalendarX;
+            this.CalendarY = CalendarY;
+            this.StrDate = StrDate;
         }
     }
 
@@ -68,17 +48,10 @@ namespace chechaton.viewmodels
         {
             for(int i = 0; i < 35; i++)
             {
-                calendary.Add(new Day());
+                calendary.Add(new Day(i % 7, i / 7, "18 November"));
             }
-            calendary[0].IsHaveTask = true;
+            calendary[0].IsFailed = false;
         }
 
-        static public void CheckBoxAction(object paramspamspams)
-        {
-            int a = 0;
-            int b = 0;
-        }
-
-        static public RelayCommand checkboxcom = new RelayCommand(CheckBoxAction);
     }
 }

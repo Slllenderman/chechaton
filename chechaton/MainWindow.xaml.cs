@@ -5,10 +5,10 @@ namespace chechaton
 {
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
-            //FCh.Command = indexVM.checkboxcom;
         }
     }
 }

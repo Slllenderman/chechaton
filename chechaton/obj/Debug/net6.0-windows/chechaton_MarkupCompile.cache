@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\ander\source\repos\chechaton\chechaton\obj\Debug\net6.0-windows\
+C:\Users\ander\source\repos\Chechaton\chechaton\chechaton\obj\Debug\net6.0-windows\
 chechaton
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\ander\source\repos\chechaton\chechaton\App.xaml
-12-287553750
+C:\Users\ander\source\repos\Chechaton\chechaton\chechaton\App.xaml
+10-1220175935
 
-105851656
-194-1103864946
-assets\brushes.xaml;assets\imgs.xaml;assets\rightarrow1_121323.xaml;MainWindow.xaml;templates\buttons.xaml;templates\calendarBt.xaml;templates\changeTaskButton.xaml;templates\checkboxes.xaml;views\calendar.xaml;views\taskbar.xaml;views\taskslist.xaml;views\ticketBack.xaml;
+8-825695235
+197-1042779078
+assets\brushes.xaml;assets\imgs.xaml;assets\rightarrow1_121323.xaml;MainWindow.xaml;templates\buttons.xaml;templates\calendarBt.xaml;templates\changeTaskButton.xaml;templates\checkboxes.xaml;views\calendar.xaml;views\taskbar.xaml;
 
 False
 

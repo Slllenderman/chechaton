@@ -4,37 +4,327 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:temp="clr-namespace:chechaton.templates"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              mc:Ignorable="d" 
-             d:DesignHeight="1615" d:DesignWidth="655">
+             d:DesignHeight="700" d:DesignWidth="1655">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <Thickness x:Key="BtMargin" Left="5" Top="5" Right="5" Bottom="5" />
+                    <sys:Double x:Key="BtFont">24</sys:Double>
+                </ResourceDictionary>
                 <ResourceDictionary Source="../assets/brushes.xaml"/>
                 <ResourceDictionary Source="../templates/calendarBt.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <ItemsControl x:Name="calendarContainer"
-                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
-                  Width="1615" Height="655" HorizontalAlignment="Center"
-                  HorizontalContentAlignment="Stretch"
-                  BorderThickness="0">
-        <ItemsControl.ItemTemplate>
-            <DataTemplate>
-                <Button Template="{StaticResource calendarBt}"
-                        temp:ButtonProperties.IsFailed="False"    
-                        temp:ButtonProperties.IsToday="False"
-                        temp:ButtonProperties.IsHaveTask="False"
-                        HorizontalAlignment="Center" VerticalAlignment="Center"
-                        Background="#B8F956">
+    <!--<Button Template="{StaticResource calendarBt}"
+                        temp:ButtonProperties.IsFailed="{Binding Path=IsFailed}"    
+                        temp:ButtonProperties.IsToday="{Binding Path=IsToday}"
+                        temp:ButtonProperties.IsHaveTask="{Binding Path=IsHaveTask}"
+                        Grid.Column="{Binding Path=CalendarX}"
+                        Grid.Row = "{Binding Path=CalendarY}"
+                        Background="{StaticResource HolidayGreen}"
+                        HorizontalAlignment="Center" VerticalAlignment="Center">
                     18 November
-                </Button>
-            </DataTemplate>
-        </ItemsControl.ItemTemplate>
-        <ItemsControl.ItemsPanel>
-            <ItemsPanelTemplate>
-                <WrapPanel ItemHeight="130" ItemWidth="230"/>
-            </ItemsPanelTemplate>
-        </ItemsControl.ItemsPanel>
-    </ItemsControl>
+                </Button>-->
+    <Grid x:Name="calendarGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DockPanel x:Name="Dc1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="0"
+                   Grid.Row = "0">
+            <Button x:Name="Bt1"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc2" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="1"
+                   Grid.Row = "0">
+            <Button x:Name="Bt2"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="2"
+                   Grid.Row = "0">
+            <Button x:Name="Bt3"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="3"
+                   Grid.Row = "0">
+            <Button x:Name="Bt4"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="4"
+                   Grid.Row = "0">
+            <Button x:Name="Bt5"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc6" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="5"
+                   Grid.Row = "0">
+            <Button x:Name="Bt6"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc7" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="6"
+                   Grid.Row = "0">
+            <Button x:Name="Bt7"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc8" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="0"
+                   Grid.Row = "1">
+            <Button x:Name="Bt8"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc9" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="1"
+                   Grid.Row = "1">
+            <Button x:Name="Bt9"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc10" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="2"
+                   Grid.Row = "1">
+            <Button x:Name="Bt10"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc11" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="3"
+                   Grid.Row = "1">
+            <Button x:Name="Bt11"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc12" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="4"
+                   Grid.Row = "1">
+            <Button x:Name="Bt12"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc13" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="5"
+                   Grid.Row = "1">
+            <Button x:Name="Bt13"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc14" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="6"
+                   Grid.Row = "1">
+            <Button x:Name="Bt14"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc15" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="0"
+                   Grid.Row = "2">
+            <Button x:Name="Bt15"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc16" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="1"
+                   Grid.Row = "2">
+            <Button x:Name="Bt16"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc17" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="2"
+                   Grid.Row = "2">
+            <Button x:Name="Bt17"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc18" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="3"
+                   Grid.Row = "2">
+            <Button x:Name="Bt18"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc19" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="4"
+                   Grid.Row = "2">
+            <Button x:Name="Bt19"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc20" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="5"
+                   Grid.Row = "2">
+            <Button x:Name="Bt20"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc21" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="6"
+                   Grid.Row = "2">
+            <Button x:Name="Bt21"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc22" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="0"
+                   Grid.Row = "3">
+            <Button x:Name="Bt22"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc23" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="1"
+                   Grid.Row = "3">
+            <Button x:Name="Bt23"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc24" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="2"
+                   Grid.Row = "3">
+            <Button x:Name="Bt24"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc25" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="3"
+                   Grid.Row = "3">
+            <Button x:Name="Bt25"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc26" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="4"
+                   Grid.Row = "3">
+            <Button x:Name="Bt26"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc27" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="5"
+                   Grid.Row = "3">
+            <Button x:Name="Bt27"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc28" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="6"
+                   Grid.Row = "3">
+            <Button x:Name="Bt28"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc29" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="0"
+                   Grid.Row = "4">
+            <Button x:Name="Bt29"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc30" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="1"
+                   Grid.Row = "4">
+            <Button x:Name="Bt30"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc31" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="2"
+                   Grid.Row = "4">
+            <Button x:Name="Bt31"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc32" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="3"
+                   Grid.Row = "4">
+            <Button x:Name="Bt32"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc33" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="4"
+                   Grid.Row = "4">
+            <Button x:Name="Bt33"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc34" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="5"
+                   Grid.Row = "4">
+            <Button x:Name="Bt34"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+        <DockPanel x:Name="Dc35" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                   Grid.Column="6"
+                   Grid.Row = "4">
+            <Button x:Name="Bt35"  Template="{StaticResource calendarBt}"
+                    Margin="{StaticResource BtMargin}"
+                    DockPanel.Dock="Top"
+                    FontSize="{StaticResource BtFont}"/>
+        </DockPanel>
+    </Grid>
 </UserControl>

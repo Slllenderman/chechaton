@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:temp="clr-namespace:chechaton.templates"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="1620">
+             d:DesignHeight="300" d:DesignWidth="1620">
     <UserControl.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -17,8 +17,8 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <Grid Height="300" Width="1620">
-        <Border Margin="10, 30, 15, 20" 
+    <Grid>
+        <Border 
                 CornerRadius="20" 
                 Background="{StaticResource TaskBarGreen}">
             <Grid>
@@ -31,7 +31,11 @@
                     Margin="0, 10, 0, 10"
                     BorderThickness="0, 0, 1, 0"
                     BorderBrush="Black"/>
-                <StackPanel Grid.Column="0">
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
                     <Grid Margin="10">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="1*"/>
@@ -39,84 +43,96 @@
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
                             <RowDefinition Height="45"/>
-                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="20"/>
                         </Grid.RowDefinitions>
                         <UserControl Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
                                      VerticalAlignment="Top"
                                      Template="{StaticResource UserLogo}"/>
-                        <TextBlock Grid.Column="1"
+                        <Viewbox Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left">
+                            <TextBlock
                                    Text="Andrey Kharitonov"
-                                   VerticalAlignment="Bottom"
                                    FontFamily="Inter"
-                                   FontSize="32"
                                    FontWeight="Bold"
-                                   Height="32"/>
-                        <TextBlock Grid.Column="1" Grid.Row="1"
-                                   VerticalAlignment="Top"
+                                   TextWrapping="Wrap"
+                                   Margin="0, 0, 50, 0"/>
+                        </Viewbox>
+                        <Viewbox Grid.Column="1" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <TextBlock Grid.Column="1" Grid.Row="1"
+                                   TextWrapping="Wrap"
                                    Text="11 Noveber 09am"
                                    FontFamily="Inter"
-                                   FontSize="20"
+
                                    FontWeight="Bold"/>
+                        </Viewbox>
                     </Grid>
-                    <TextBlock Text="No plans for you today, dude"
+                    <Viewbox Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top">
+                        <TextBlock Text="No plans for you today, dude"
                                FontFamily="Inter"
-                               FontSize="20"
+                               TextWrapping="Wrap"
                                FontWeight="Bold"
                                FontStyle="Italic"
-                               HorizontalAlignment="Center"
-                               Margin="0, 45, 0, 0"/>
-                </StackPanel>
+                               Margin="20, 0, 20, 0"/>
+                    </Viewbox>
+                </Grid>
                 <Grid Grid.Column="1" Margin="15">
                     <StackPanel Orientation="Horizontal">
-                        <StackPanel HorizontalAlignment="Left"
-                                VerticalAlignment="Top">
-                            <TextBlock FontFamily="Inter"
-                                   FontSize="24"
+                        <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top">
+                            <Viewbox>
+                                <TextBlock FontFamily="Inter"
+                                   FontSize="20"
                                    FontWeight="SemiBold">
-                            Where's some plans on:
-                            </TextBlock>
+                                   Where's some plans on:
+                                </TextBlock>
+                            </Viewbox>
                             <TextBlock FontFamily="Inter"
                                    FontWeight="SemiBold"
-                                   FontSize="24">
+                                   FontSize="20">
                             12 November
                             </TextBlock>
                         </StackPanel>
-                        <StackPanel Margin="40, 0, 0, 0">
-                            <StackPanel Orientation="Horizontal">
+                        <Grid Margin="40, 0, 0, 0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="1*"/>
+                                <RowDefinition Height="0.5*"/>
+                            </Grid.RowDefinitions>
+                            <StackPanel Orientation="Horizontal" Grid.Row="0">
                                 <CheckBox Template="{StaticResource appChkBxs}"
-                                          FontSize="32"
+                                          FontSize="24"
                                           Content="First task"/>
-                                <Button Margin="15, 3, 0, 0" Width="30" Height="30"
+                                <Button Margin="15, 3, 0, 0" Width="22" Height="22"
                                         Template="{StaticResource changeTaskBtn}"/>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal" Grid.Row="1">
                                 <CheckBox Template="{StaticResource appChkBxs}"
-                                          FontSize="32"
+                                          FontSize="24"
                                           Content="Task task task task"/>
-                                <Button Margin="15, 3, 0, 0" Width="30" Height="30"
+                                <Button Margin="15, 3, 0, 0" Width="22" Height="22"
                                         Template="{StaticResource changeTaskBtn}"/>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal" Grid.Row="2">
                                 <CheckBox Template="{StaticResource appChkBxs}"
-                                          FontSize="32"
+                                          FontSize="24"
                                           Content="Nanananaana task"/>
-                                <Button Margin="15, 3, 0, 0" Width="30" Height="30"
+                                <Button Margin="15, 3, 0, 0" Width="22" Height="22"
                                         Template="{StaticResource changeTaskBtn}"/>
                             </StackPanel>
-                            <StackPanel Orientation="Horizontal">
+                            <StackPanel Orientation="Horizontal" Grid.Row="3">
                                 <CheckBox Template="{StaticResource appChkBxs}"
-                                          FontSize="32"
+                                          FontSize="24"
                                           Content="Task"/>
-                                <Button Margin="15, 3, 0, 0" Width="30" Height="30"
+                                <Button Margin="15, 3, 0, 0" Width="22" Height="22"
                                         Template="{StaticResource changeTaskBtn}"/>
                             </StackPanel>
                             <Button Template="{StaticResource appBtns}"
+                                    Grid.Row="4"
                                     Content="Show etc"
                                     HorizontalAlignment="Left"
                                     Width="80"
-                                    Height="30"
                                     Background="{StaticResource HolidayYellow}"/>
-                        </StackPanel>
+                        </Grid>
                     </StackPanel>
                     <TextBlock
                            Visibility="Hidden"
@@ -130,36 +146,46 @@
                                 Select the date to plan something greate
                     </TextBlock>
                 </Grid>
-                <StackPanel Grid.Column="2" Margin="10, 0, 10, 0">
-                    <Button Template="{StaticResource appBtns}"
-                        Height="50" Margin="0, 10, 0, 0"
+                <Grid Grid.Column="2" Margin="10, 0, 10, 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <DockPanel Grid.Row="0" VerticalAlignment="Stretch" Margin="0, 5, 0, 5">
+                        <Button Template="{StaticResource appBtns}"
                         Background="{StaticResource HolidayYellow}"
                         FontSize="20"
-                        VerticalAlignment="Top">
-                        Next task
-                    </Button>
-                    <Button Template="{StaticResource appBtns}"
-                        Height="50" Margin="0, 10, 0, 0"
+                        DockPanel.Dock="Bottom">
+                            Next task
+                        </Button>
+                    </DockPanel>
+                    <DockPanel Grid.Row="1" VerticalAlignment="Stretch" Margin="0, 5, 0, 5">
+                        <Button Template="{StaticResource appBtns}"
                         Background="{StaticResource HolidayYellow}"
                         FontSize="20"
-                        VerticalAlignment="Top">
-                        Previous task
-                    </Button>
-                    <Button Template="{StaticResource appBtns}"
-                        Height="50" Margin="0, 10, 0, 0"
+                        DockPanel.Dock="Bottom">
+                            Previous task
+                        </Button>
+                    </DockPanel>
+                    <DockPanel Grid.Row="2" VerticalAlignment="Stretch" Margin="0, 5, 0, 5">
+                        <Button Template="{StaticResource appBtns}"
                         Background="{StaticResource HolidayYellow}"
                         FontSize="20"
-                        VerticalAlignment="Top">
-                        Next month
-                    </Button>
-                    <Button Template="{StaticResource appBtns}"
-                        Height="50" Margin="0, 10, 0, 0"
+                        DockPanel.Dock="Bottom">
+                            Previous Month
+                        </Button>
+                    </DockPanel>
+                    <DockPanel Grid.Row="3" VerticalAlignment="Stretch" Margin="0, 5, 0, 5">
+                        <Button Template="{StaticResource appBtns}"
                         Background="{StaticResource HolidayYellow}"
                         FontSize="20"
-                        VerticalAlignment="Top">
-                        Prevoius month
-                    </Button>
-                </StackPanel>
+                        DockPanel.Dock="Bottom">
+                            Next Month
+                        </Button>
+                    </DockPanel>
+                </Grid>
             </Grid>
         </Border>
     </Grid>

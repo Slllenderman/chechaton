@@ -18,7 +18,10 @@
             </ResourceDictionary>
         </ControlTemplate.Resources>
         <Border x:Name="BackRect" CornerRadius="{StaticResource CornerRadius}" 
-                Background="{TemplateBinding Background}" BorderThickness="0" Height="115" Width="215">
+                BorderThickness="0">
+            <Border.Background >
+                <SolidColorBrush x:Name="BackRectColor" Color="{Binding Background.Color, RelativeSource={RelativeSource TemplatedParent}}"/>
+            </Border.Background>
             <ContentControl FontFamily="Inter">
                 <ContentControl.Content>
                     <Grid>
@@ -28,11 +31,11 @@
                         <Border x:Name="FailedRect" 
                                 Width="{StaticResource FailedRectSize}" Height="{StaticResource FailedRectSize}" 
                                 VerticalAlignment="Top" HorizontalAlignment="Right"
-                                Background="{StaticResource FailedOrange}" Visibility="Collapsed"
+                                Background="#FFB26A" Visibility="Collapsed"
                                 CornerRadius="{StaticResource FiledCornerRaidus}"/>
                         <TextBlock x:Name="MainTitle"
                                    VerticalAlignment="Center" HorizontalAlignment="Center"
-                                   Text="{TemplateBinding Content}" FontSize="24"/>
+                                   Text="{TemplateBinding Content}" FontSize="{TemplateBinding FontSize}"/>
                     </Grid>
                 </ContentControl.Content>
             </ContentControl>
@@ -68,7 +71,7 @@
                                     <SineEase EasingMode="EaseOut"/>
                                 </DoubleAnimation.EasingFunction>
                             </DoubleAnimation>
-                            <ColorAnimation Storyboard.TargetName="BackRect" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                            <ColorAnimation Storyboard.TargetName="BackRectColor" Storyboard.TargetProperty="Color"
                                         FillBehavior="HoldEnd" Duration="0:0:0.3" >
                                 <ColorAnimation.By>
                                     <Color ScR="-0.12" ScG="-0.02" ScB="-0.58"/>
@@ -89,7 +92,7 @@
                                     <SineEase EasingMode="EaseOut"/>
                                 </DoubleAnimation.EasingFunction>
                             </DoubleAnimation>
-                            <ColorAnimation Storyboard.TargetName="BackRect" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                            <ColorAnimation Storyboard.TargetName="BackRectColor" Storyboard.TargetProperty="Color"
                                          FillBehavior="HoldEnd" Duration="0:0:0.3" >
                                 <ColorAnimation.EasingFunction>
                                     <SineEase EasingMode="EaseInOut"/>
@@ -103,7 +106,7 @@
                 <Trigger.EnterActions>
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Storyboard.TargetName="BackRect" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                            <ColorAnimation Storyboard.TargetName="BackRectColor" Storyboard.TargetProperty="Color"
                                         FillBehavior="HoldEnd" Duration="0:0:0.1" >
                                 <ColorAnimation.By>
                                     <Color ScR="-0.3" ScG="-0.3" ScB="-0.3"/>
@@ -118,7 +121,7 @@
                 <Trigger.ExitActions>
                     <BeginStoryboard>
                         <Storyboard>
-                            <ColorAnimation Storyboard.TargetName="BackRect" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"
+                            <ColorAnimation Storyboard.TargetName="BackRectColor" Storyboard.TargetProperty="Color"
                                         FillBehavior="HoldEnd" Duration="0:0:0.1" >
                                 <ColorAnimation.EasingFunction>
                                     <SineEase EasingMode="EaseInOut"/>

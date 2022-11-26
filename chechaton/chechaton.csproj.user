@@ -13,12 +13,6 @@
     <Compile Update="views\taskbar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="views\taskslist.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="views\ticketBack.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="assets\imgs.xaml">
@@ -46,12 +40,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="views\taskbar.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="views\taskslist.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="views\ticketBack.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
