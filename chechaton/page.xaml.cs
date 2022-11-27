@@ -19,49 +19,20 @@ namespace Notifications {
     /// Логика взаимодействия для page.xaml
     /// </summary>
     public partial class page : Window {
+
         public page() {
             InitializeComponent();
-            date.Content = DateTime.Today.ToString("M");
-        }
-        private void add_Click(object sender, RoutedEventArgs e) {
-            //fullTaskList.Visibility = Visibility.Hidden;
+            viewbox.MouseLeftButtonDown += new MouseButtonEventHandler(Dragging);
         }
 
-
-        private void closeThikk_MouseEnter(object sender, MouseEventArgs e) {
-
-            DoubleAnimation op = new DoubleAnimation();
-            op.From = 0;
-            op.To = 1;
-            op.Duration = TimeSpan.FromSeconds(0.3);
-            thikk.BeginAnimation(closeThikk.OpacityProperty, op);
-
+        void Dragging(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
 
-        private void closeThin_MouseEnter(object sender, MouseEventArgs e) {
-        }
 
-        private void thikk_MouseLeave(object sender, MouseEventArgs e) {
-
-            DoubleAnimation op = new DoubleAnimation();
-            op.From = 1;
-            op.To = 0;
-            op.Duration = TimeSpan.FromSeconds(0.3);
-            thikk.BeginAnimation(closeThikk.OpacityProperty, op);
-
-        }
-
-        private void addButton_Loaded(object sender, RoutedEventArgs e) {
-
-        }
-
-        private void addButton_MouseLeftButtonUp(object sender, MouseButtonEventArgs e) {
-            //addTask addtask = new addTask();
-            //addtask.Show();
-        }
-
-        private void thikk_MouseLeftButtonUp(object sender, MouseButtonEventArgs e) {
-            this.Hide();
+        private void CloseClick(object sender, RoutedEventArgs e) {
+            this.Close();
         }
     }
 }

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Projects\Organizer\chechaton\obj\Debug\net6.0-windows\
+C:\Users\ander\source\repos\Chechaton\chechaton\chechaton\obj\Debug\net6.0-windows\
 chechaton
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-D:\Projects\Organizer\chechaton\App.xaml
-26496482368
+C:\Users\ander\source\repos\Chechaton\chechaton\chechaton\App.xaml
+2281850027
 
-221936891717
-198-1883249050
-assets\brushes.xaml;assets\imgs.xaml;assets\rightarrow1_121323.xaml;MainWindow.xaml;page.xaml;pics\add_Button.xaml;pics\back.xaml;pics\closePage_Thikk.xaml;pics\closePage_Thin.xaml;pics\list.xaml;templates\buttons.xaml;templates\calendarBt.xaml;templates\changeTaskButton.xaml;templates\checkboxes.xaml;templates\closeButton.xaml;templates\closeThikk.xaml;UserControls\add_button.xaml;UserControls\back.xaml;UserControls\bgControl.xaml;UserControls\bgControl_settings.xaml;UserControls\closeThikk.xaml;UserControls\closeThin.xaml;UserControls\dateControl.xaml;UserControls\dateControl_settings.xaml;views\calendar.xaml;views\taskbar.xaml;
+17628952914
+198100195412
+assets\brushes.xaml;assets\imgs.xaml;assets\rightarrow1_121323.xaml;bgControl.xaml;MainWindow.xaml;page.xaml;pics\add_Button.xaml;pics\back.xaml;pics\closePage_Thikk.xaml;pics\closePage_Thin.xaml;pics\list.xaml;templates\addTaskButton.xaml;templates\add_button.xaml;templates\back.xaml;templates\buttons.xaml;templates\calendarBt.xaml;templates\changeTaskButton.xaml;templates\checkboxes.xaml;templates\closePageButton.xaml;templates\textboxstyle.xaml;views\calendar.xaml;views\taskbar.xaml;
 
 False
 

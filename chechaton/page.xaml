@@ -3,28 +3,79 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Notifications"
-        xmlns:views="clr-namespace:Notifications.UserControls"
+        xmlns:local="clr-namespace:chechaton"
+        xmlns:temp="clr-namespace:chechaton.templates"
         mc:Ignorable="d"
-        Title="page" Height="450" Width="800"
+        Title="page" Height="800" Width="1000"
         WindowStyle="None" Background ="Transparent" AllowsTransparency="True">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/templates/closeThikk.xaml"/>
+                <ResourceDictionary Source="templates/checkboxes.xaml"/>
+                <ResourceDictionary Source="templates/changeTaskButton.xaml"/>
+                <ResourceDictionary Source="templates/textboxstyle.xaml"/>
+                <ResourceDictionary Source="templates/buttons.xaml"/>
+                <ResourceDictionary Source="templates/addTaskButton.xaml"/>
+                <ResourceDictionary Source="assets/brushes.xaml"/>
+                <ResourceDictionary Source="templates/closePageButton.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
 
-    <Viewbox>
+    <Viewbox x:Name="viewbox" Width="1000" Height="800">
         <Grid x:Name="fullTaskList">
             <Grid.RowDefinitions>
             </Grid.RowDefinitions>
-            <views:bgControl_settings x:Name="tab" Grid.Row="0"/>
-            <views:dateControl_settings x:Name="date" Grid.Row="0" Content="date" Margin="278,36,487,389" RenderTransformOrigin="0.529,0.598" FontSize="18"/>
-            <views:closeThin Margin="511,41,282,421" RenderTransformOrigin="0.5,0.5" MouseEnter="closeThin_MouseEnter" />
-            <views:closeThikk x:Name="thikk" Margin="511,41,282,421" Panel.ZIndex="2" MouseEnter="closeThikk_MouseEnter" Opacity="0" MouseLeave="thikk_MouseLeave" MouseLeftButtonUp="thikk_MouseLeftButtonUp"/>
-            <views:add_button x:Name="addButton" Margin="278,69,498,385" Width="100" Loaded="addButton_Loaded" MouseLeftButtonUp="addButton_MouseLeftButtonUp"/>
+            <local:bgControl x:Name="tab" Grid.Row="0" Margin="-84,-10,84,10" HorizontalAlignment="Center" VerticalAlignment="Center" Height="450" Width="800"/>
+            <Grid Visibility="Visible" HorizontalAlignment="Center" Width="375" Height="350" Margin="12, 12, 10, 90">
+                <StackPanel Margin="12">
+                    <DockPanel>
+                        <TextBlock FontSize="24" 
+                          FontWeight="Bold"
+                          Text="18 November"/>
+                        <Button HorizontalAlignment="Right" Template="{StaticResource closePageBtn}" Width="30" Click="CloseClick" />
+                    </DockPanel>
+                    <ItemsControl>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <DockPanel HorizontalAlignment="Stretch">
+                                    <StackPanel DockPanel.Dock="Left" Orientation="Horizontal" Grid.Row="0">
+                                        <CheckBox Template="{StaticResource appChkBxs}"
+                                          FontSize="24"
+                                          Content="First task"/>
+                                        <Button Margin="15, 3, 0, 0" Width="22" Height="22" HorizontalAlignment="Right"
+                                        Template="{StaticResource changeTaskBtn}"/>
+                                    </StackPanel>
+                                </DockPanel>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                    <Button Template="{StaticResource addTaskBtn}" HorizontalAlignment="Left" Height="30"/>
+                </StackPanel>
+                <TextBlock Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontSize="26" FontWeight="ExtraBold">
+                    It's the time to start<LineBreak/> 
+                    making dreams come true
+                </TextBlock>
+            </Grid>
+            <Grid Visibility="Hidden" HorizontalAlignment="Center" Width="375" Height="400" Margin="12, 27, 10, 0" VerticalAlignment="Top">
+                <StackPanel Margin="12, 12, 12, 0">
+                    <TextBlock FontSize="24" 
+                          FontWeight="Bold"
+                          Text="Task additing"/>
+                    <StackPanel Margin="0, 30, 150, 0">
+                        <TextBlock FontSize="20" Text="Task name"/>
+                        <TextBox Style="{StaticResource textboxStyle}"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBlock FontSize="20" Text="Task description"/>
+                        <TextBox Height="200" Style="{StaticResource textboxStyle}"/>
+                    </StackPanel>
+                    <Button Template="{StaticResource appBtns}" Width="120" Height="45" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0, 12, 0, 0"
+                        Background="{StaticResource HolidayGreen}"
+                        Content="Save"
+                        FontSize="24"/>
+                </StackPanel>
+            </Grid>
         </Grid>
     </Viewbox>
 </Window>

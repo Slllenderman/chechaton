@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="bgControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="views\calendar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -18,10 +21,16 @@
     <Page Update="assets\imgs.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="bgControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="assets\brushes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="templates\addTaskButton.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="templates\buttons.xaml">
@@ -34,6 +43,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="templates\checkboxes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="templates\closePageButton.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="views\calendar.xaml">

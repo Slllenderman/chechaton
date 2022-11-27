@@ -24,6 +24,7 @@ namespace chechaton.views
             page Page = new page();
             Page.Show();
         }
+
         static Brush? SelectBackColor(Day day)
         {
             var converter = new BrushConverter();
