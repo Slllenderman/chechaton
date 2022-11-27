@@ -9,7 +9,7 @@
     <SolidColorBrush x:Key="HolidayYellow" Color="#FFE142"/>
     <SolidColorBrush x:Key="NoMonthGrey" Color="#EBEAEA"/>
     <SolidColorBrush x:Key="ClickedGreen" Color="#84DA00"/>
-    <SolidColorBrush x:Key="ClickedYellow" Color="#EAC400"/>
+    <SolidColorBrush x:Key="ClickedYello" Color="#EAC400"/>
     <SolidColorBrush x:Key="ClickedGrey" Color="#D9D9D9"/>
     <SolidColorBrush x:Key="HoverGrey">#E0E0E0</SolidColorBrush>
     <SolidColorBrush x:Key="HoverGreen">#9AFF00</SolidColorBrush>
