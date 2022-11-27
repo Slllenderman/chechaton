@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This file is NOT compatible with Silverlight-->
+<Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+  <Canvas Name="svg100" Width="886" Height="948">
+    <Canvas.RenderTransform>
+      <TranslateTransform X="0" Y="0"/>
+    </Canvas.RenderTransform>
+    <Canvas.Resources>
+      <LinearGradientBrush xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="paint0_linear_0_1" MappingMode="Absolute" StartPoint="145,940" EndPoint="219,940">
+        <LinearGradientBrush.GradientStops>
+          <GradientStopCollection>
+            <GradientStop Color="#C5CF89"/>
+            <GradientStop Color="#F3FFAB" Offset="0.541667"/>
+          </GradientStopCollection>
+        </LinearGradientBrush.GradientStops>
+      </LinearGradientBrush>
+      <LinearGradientBrush xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Key="paint1_linear_0_1" MappingMode="Absolute" StartPoint="413,9" EndPoint="470,36">
+        <LinearGradientBrush.GradientStops>
+          <GradientStopCollection>
+            <GradientStop Color="#A1A80000" Offset="0.223958"/>
+            <GradientStop Color="#48D88D8D" Offset="0.723958"/>
+            <GradientStop Color="#00ffffff" Offset="1"/>
+          </GradientStopCollection>
+        </LinearGradientBrush.GradientStops>
+      </LinearGradientBrush>
+    </Canvas.Resources>
+    <!--Unknown tag: sodipodi:namedview-->
+    <Canvas Name="g59">
+      <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path53" Fill="#FFE7FF57">
+        <Path.Data>
+          <PathGeometry Figures="M146 796C90.5456 796 59.4544 796 4 796C58.0876 852.236 88.4124 883.764 142.5 940C143.867 883.764 144.633 852.236 146 796Z" FillRule="NonZero"/>
+        </Path.Data>
+      </Path>
+      <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path55" Fill="#FFF3FFAB">
+        <Path.Data>
+          <PathGeometry Figures="M882 1H4C4 1 4 485.533 4 796C59.4544 796 90.5456 796 146 796C171.97 852.236 186.53 883.764 212.5 940C473.956 940 882 940 882 940V1Z" FillRule="EvenOdd"/>
+        </Path.Data>
+      </Path>
+      <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path57" Fill="{StaticResource paint0_linear_0_1}">
+        <Path.Data>
+          <PathGeometry Figures="M146 796C144.633 852.236 143.867 883.764 142.5 940C169.837 940 185.163 940 212.5 940C186.53 883.764 171.97 852.236 146 796Z" FillRule="NonZero"/>
+        </Path.Data>
+      </Path>
+    </Canvas>
+    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path61" Fill="{StaticResource paint1_linear_0_1}">
+      <Path.Data>
+        <PathGeometry Figures="M469.104 37.136C464.066 47.9416 447.225 50.7532 431.491 43.416C415.756 36.0787 407.085 21.371 412.124 10.5653C417.162 -0.240304 434.003 -3.05196 449.738 4.28531C465.472 11.6226 474.143 26.3303 469.104 37.136Z" FillRule="NonZero"/>
+      </Path.Data>
+    </Path>
+    <Ellipse xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Canvas.Left="413.4" Canvas.Top="0.1" Width="40" Height="40" Name="circle63" Fill="#FFE00000"/>
+    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path65" Fill="#FF9B0000">
+      <Path.Data>
+        <PathGeometry Figures="M444.408 19.6385C444.408 26.5421 438.812 32.1385 431.908 32.1385C425.005 32.1385 419.408 26.5421 419.408 19.6385C419.408 12.735 425.005 7.13855 431.908 7.13855C438.812 7.13855 444.408 12.735 444.408 19.6385Z" FillRule="NonZero"/>
+      </Path.Data>
+    </Path>
+    <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path67" Fill="#FFFF0000">
+      <Path.Data>
+        <PathGeometry Figures="M439 16C439 23.732 432.732 30 425 30C417.268 30 411 23.732 411 16C411 8.26801 417.268 2 425 2C432.732 2 439 8.26801 439 16Z" FillRule="NonZero"/>
+      </Path.Data>
+    </Path>
+  </Canvas>
+</Viewbox>

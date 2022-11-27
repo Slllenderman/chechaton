@@ -1,5 +1,6 @@
 ﻿using System.Windows;
-using chechaton.viewmodels;
+//using chechaton.viewmodels;
+using chechaton.views;
 
 namespace chechaton
 {

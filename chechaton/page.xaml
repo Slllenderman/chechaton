@@ -1,0 +1,30 @@
+﻿<Window x:Class="Notifications.page"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Notifications"
+        xmlns:views="clr-namespace:Notifications.UserControls"
+        mc:Ignorable="d"
+        Title="page" Height="450" Width="800"
+        WindowStyle="None" Background ="Transparent" AllowsTransparency="True">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/templates/closeThikk.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Viewbox>
+        <Grid x:Name="fullTaskList">
+            <Grid.RowDefinitions>
+            </Grid.RowDefinitions>
+            <views:bgControl_settings x:Name="tab" Grid.Row="0"/>
+            <views:dateControl_settings x:Name="date" Grid.Row="0" Content="date" Margin="278,36,487,389" RenderTransformOrigin="0.529,0.598" FontSize="18"/>
+            <views:closeThin Margin="511,41,282,421" RenderTransformOrigin="0.5,0.5" MouseEnter="closeThin_MouseEnter" />
+            <views:closeThikk x:Name="thikk" Margin="511,41,282,421" Panel.ZIndex="2" MouseEnter="closeThikk_MouseEnter" Opacity="0" MouseLeave="thikk_MouseLeave" MouseLeftButtonUp="thikk_MouseLeftButtonUp"/>
+            <views:add_button x:Name="addButton" Margin="278,69,498,385" Width="100" Loaded="addButton_Loaded" MouseLeftButtonUp="addButton_MouseLeftButtonUp"/>
+        </Grid>
+    </Viewbox>
+</Window>

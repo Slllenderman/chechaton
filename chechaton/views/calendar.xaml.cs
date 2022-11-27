@@ -1,11 +1,14 @@
 ﻿using System.Windows.Controls;
 using System.Windows.Data;
-using chechaton.viewmodels;
 using chechaton.templates;
 using System.Windows;
 using System.Collections.ObjectModel;
 using System.Collections.Generic;
 using System.Windows.Media;
+
+using Data;
+using System;
+using Notifications;
 
 namespace chechaton.views
 {
@@ -16,16 +19,21 @@ namespace chechaton.views
 
     public partial class calendar : UserControl
     {
+
+        public void Button_click(object sender, RoutedEventArgs e) {
+            page Page = new page();
+            Page.Show();
+        }
         static Brush? SelectBackColor(Day day)
         {
             var converter = new BrushConverter();
-            if (day.IsNoMonth)
+            if (day.IsMonth)
                 return (Brush?)converter.ConvertFromString("#EBEAEA");
-            if ((day.IsHoliday) && (day.IsHaveTask))
+            if ((day.IsWeekend) && (day.IsHaveTask))
                 return (Brush?)converter.ConvertFromString("#FFE142");
             if(day.IsHaveTask)
                 return (Brush?)converter.ConvertFromString("#FFE458");
-            if(day.IsHoliday)
+            if(day.IsWeekend)
                 return (Brush?)converter.ConvertFromString("#B2FF3D");
             return (Brush?)converter.ConvertFromString("#B8F956");
         }
@@ -42,19 +50,22 @@ namespace chechaton.views
 
             for(int i = 0; i < 35; i++)
             {
+                month[i].IsMonth = (DateTime.Now.ToString("MMMM") != month[i].Date.ToString("MMMM"));
                 btarr[i].Background = SelectBackColor(month[i]);
-                btarr[i].Content = month[i].StrDate;
+                btarr[i].Content = month[i].Date.ToString("M");
                 btarr[i].SetValue(ButtonProperties.IsFailedProperty, month[i].IsFailed);
                 btarr[i].SetValue(ButtonProperties.IsTodayProperty, month[i].IsToday);
                 btarr[i].SetValue(ButtonProperties.IsHaveTaskProperty, month[i].IsHaveTask);
+                btarr[i].Click += Button_click;
             }
         }
 
         public calendar()
         {
             InitializeComponent();
-            var vm = new indexVM();
-            FillGrid(vm.calendary);
+            DayManager dm = new DayManager();
+            ObservableCollection < Day > calendar = dm.GetCalendary(11, 2022);
+            FillGrid(calendar);
         }
     }
 }

@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="Notifications.UserControls.back"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Notifications.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Stretch="Uniform">
+            <Canvas Name="svg12" Width="42" Height="34">
+                <Canvas.RenderTransform>
+                    <TranslateTransform X="0" Y="0"/>
+                </Canvas.RenderTransform>
+                <Canvas.Resources/>
+                <!--Unknown tag: sodipodi:namedview-->
+                <Path xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Name="path10" Fill="#000000">
+                    <Path.Data>
+                        <PathGeometry Figures="M39.7492 14.9161H7.27884L18.3059 3.88906C19.1195 3.07552 19.1189 1.75677 18.3059 0.942706C17.4924 0.129165 16.1736 0.129165 15.3596 0.942706L0.776237 15.526C-0.0373049 16.3396 -0.0373045 17.6589 0.775716 18.4719L15.359 33.0552C15.7658 33.462 16.2992 33.6656 16.8325 33.6656C17.3653 33.6656 17.8986 33.462 18.3059 33.0547C19.1195 32.2417 19.1189 30.9224 18.3059 30.1094L7.27832 19.0828H39.7492C40.8997 19.0828 41.833 18.1495 41.8325 16.9995C41.8325 15.849 40.8997 14.9161 39.7492 14.9161Z" FillRule="NonZero"/>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+        </Viewbox>
+    </Grid>
+</UserControl>
